@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Piggy Game Resources/Apple.png" type="Texture" id=1]
 [ext_resource path="res://Piggy Game Resources/Pig.png" type="Texture" id=2]
+[ext_resource path="res://Pig.gd" type="Script" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 5.31211
@@ -10,8 +11,9 @@ height = 6.70445
 [node name="World" type="Node"]
 
 [node name="Background" type="ColorRect" parent="."]
-margin_right = 1047.0
-margin_bottom = 639.0
+margin_top = 0.926582
+margin_right = 323.0
+margin_bottom = 184.927
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_lock_": true,
@@ -20,19 +22,25 @@ __meta__ = {
 
 [node name="Pig" type="Area2D" parent="."]
 position = Vector2( 0, 2.65002 )
+script = ExtResource( 3 )
 
 [node name="Pig2" type="Sprite" parent="Pig"]
+position = Vector2( 35.2101, 34.7468 )
 texture = ExtResource( 2 )
 offset = Vector2( 0, -4 )
 hframes = 3
 __meta__ = {
-"_edit_group_": true
+"_edit_lock_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pig"]
+position = Vector2( 34.7468, 35.2101 )
 rotation = 1.5708
 shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Apple" type="Sprite" parent="."]
-position = Vector2( -33.431, -12.9666 )
+position = Vector2( 308.478, 167.717 )
 texture = ExtResource( 1 )
