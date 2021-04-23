@@ -1,6 +1,6 @@
 extends Node2D
 
-const Enemy = preload("res://Enemy.gd")
+const Enemy = preload("res://Enemy.tscn")
 
 onready var spawnPoints = $SpawnPoints
 
