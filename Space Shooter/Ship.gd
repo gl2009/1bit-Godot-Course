@@ -2,7 +2,7 @@ extends Area2D
 
 const ExplosionEffect = preload("res://explosioneffect.tscn") 
 
-const Bullet = preload("res://Bullet.tscn")
+const Laser = preload("res://Laser.tscn")
 
 export (int) var SPEED = 100
 
@@ -16,10 +16,10 @@ func _process(delta):
 
 
 func fire_bullet():
-	var bullet = Bullet.instance()
+	var laser = Laser.instance()
 	var main = get_tree().current_scene
-	main.add_child(bullet)
-	bullet.global_position = global_position
+	main.add_child(laser)
+	laser.global_position = global_position
 
 
 func _on_Ship_area_entered(area):
