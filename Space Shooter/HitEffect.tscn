@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Heart Space Shooter Resources/Hit.wav" type="AudioStream" id=1]
+[ext_resource path="res://HitEffect.gd" type="Script" id=2]
 
 [sub_resource type="ParticlesMaterial" id=1]
 flag_disable_z = true
@@ -13,6 +14,7 @@ orbit_velocity_random = 0.0
 
 [node name="HitEffect" type="Node2D"]
 position = Vector2( 128, 97 )
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -33,3 +35,4 @@ process_material = SubResource( 1 )
 wait_time = 0.3
 one_shot = true
 autostart = true
+[connection signal="timeout" from="Timer" to="." method="queue_free"]
