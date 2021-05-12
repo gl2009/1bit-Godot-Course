@@ -19,7 +19,7 @@ func _process(delta):
 
 func _on_Enemy_body_entered(body):
 	body.queue_free()
-	
+	body._create_hit_effect()
 	var main = get_tree().current_scene
 	var explosionEffect = ExplosionEffect.instance()
 	ARMOR -= 1

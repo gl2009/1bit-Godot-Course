@@ -2,6 +2,8 @@ extends Area2D
 
 const ExplosionEffect = preload("res://explosioneffect.tscn") 
 
+signal player_death
+
 const Laser = preload("res://Laser.tscn")
 
 export (int) var SPEED = 100
@@ -31,3 +33,4 @@ func _exit_tree():
 	var explosionEffect = ExplosionEffect.instance()
 	main.add_child(explosionEffect)
 	explosionEffect.global_position = global_position
+	emit_signal("player_death")
