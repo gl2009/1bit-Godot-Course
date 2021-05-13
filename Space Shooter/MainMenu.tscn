@@ -46,7 +46,7 @@ margin_top = 16.0
 margin_right = 320.0
 margin_bottom = 48.0
 custom_fonts/font = SubResource( 2 )
-text = "SPACE WAR"
+text = "SPACE DEFENSE"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
