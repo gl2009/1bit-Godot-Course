@@ -15,13 +15,14 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Space Shooter"
+config/name="Space Defence"
 run/main_scene="res://MainMenu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 Music="*res://Music.tscn"
+SaveAndLoad="*res://SaveAndLoad.gd"
 
 [display]
 

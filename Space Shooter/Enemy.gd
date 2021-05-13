@@ -5,12 +5,7 @@ const ExplosionEffect = preload("res://explosioneffect.tscn")
 export (int) var SPEED = 30
 export (int) var ARMOR = 3
 
-signal score_up 
 
-func _ready():
-	var main = get_tree().current_scene
-	if main.is_in_group("World"):
-		connect("score_up", main, "_on_Enemy_score_up")
 
 func _process(delta):
 	position.x -= SPEED * delta
@@ -24,7 +19,8 @@ func _on_Enemy_body_entered(body):
 	var explosionEffect = ExplosionEffect.instance()
 	ARMOR -= 1
 	if ARMOR <= 0:
-		emit_signal("score_up")
+		if main.is_in_group("World"):
+			main.score += 10
 		queue_free()
 		main.add_child(explosionEffect)
 		explosionEffect.global_position = global_position
